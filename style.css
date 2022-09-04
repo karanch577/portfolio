@@ -52,9 +52,10 @@ html {
 .btn{
     background-color: var(--clr-red);
     color: var(--clr-light);
-    padding: .3em 1.2em;
+    padding: 1% 2.9%;
     border-radius: 8px;
     border: none;
+    display: inline-block;
     margin: 1.5em .5em;
 }
 
@@ -63,6 +64,7 @@ span{
 }
 
 /* Navbar */
+
 
 nav{
     display: flex;
@@ -94,12 +96,29 @@ a{
 }
 
 
+@media (max-width:488px) {
+    .list{
+        display: none;
+    }
+
+    nav::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        display: block;
+        content: "\f0c9";
+        position: absolute;
+        right: 4%;
+        top: .9em;
+      }
+
+}
+
 /* About Section */
 
 .hero{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -109,7 +128,7 @@ a{
 }
 
 .hero-right{
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .hero-right img{
@@ -120,9 +139,8 @@ a{
 
 .about{
     display: flex;
-    /* max-width: 90%; */
     justify-content: space-between;
-    padding: 4em 4em;
+    padding: 4em 6%;
     gap: 2em;
 }
 
@@ -144,7 +162,7 @@ a{
 /* portfolio */
 
 .portfolio{
-    padding: 2em;
+    padding: 2em 0;
 }
 
 .portfolio-items{
@@ -157,14 +175,24 @@ a{
     text-align: center;
 }
 
+.portfolio .sub-heading{
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+
 .p-item{
     width: 32%;
     padding: 1em;
-    /* flex-grow: 1; */
 }
 
 .p-item img{
     width: 100%;
+}
+
+@media (max-width:884px) {
+    .p-item{
+        width: 48%;
+    }
 }
 
 /* Contact Me */
@@ -177,20 +205,18 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2em 0;
+    padding: 2em 6%;
 }
 
 .contact-left{
     width: 50%;
     flex-grow: 2;
-    /* margin: 1em; */
 }
 
 .contact-right{
     width: 50%;
     flex-grow: 1;
     align-self: flex-start;
-    /* text-align: left; */
 
 }
 .contact-form{
@@ -210,7 +236,7 @@ a{
 }
 
 .social-icons{
-    padding: .2em;
+    padding: .2em 0;
 }
 
 .fa-brands{
@@ -218,6 +244,9 @@ a{
     font-size: 1.8rem;
 }
 
+.no-padding{
+    padding: 0;
+}
 .input{
     width: 80%;
     margin: 1em;
@@ -232,6 +261,14 @@ a{
 
 
 @media (max-width: 40em) {
+    :root{
+        --fs-heading: 1.5rem;
+    }
+    .list-items{
+        padding: .5em;
+    }
+
+
 
     .portfolio-items{
         flex-direction: column;
@@ -260,4 +297,16 @@ a{
     }
 
    
+    .heading{
+        font-size: 2rem;
+    }
+
+    .hero .sub-heading{
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .sub-heading{
+        font-size: 1.2rem;
+    }
 }
